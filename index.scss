@@ -194,7 +194,6 @@ header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
-    margin-top: 120px;
     overflow: hidden;
 
     .home_left {
@@ -240,6 +239,7 @@ header {
     .home {
         grid-template-columns: repeat(1, 1fr);
         gap: 100px;
+        margin-top: 100px;
     
         .home_left {
             transition: all 1.5s ease;
@@ -436,9 +436,14 @@ header {
             background-color: white;
             transition: all 0.5s ease;
             border-radius: 5px 5px 0 0;
+            border-bottom: 1px solid black;
 
             h2 {
                 color: $black-thin;
+                text-align: center;
+                margin-top: 40px;
+            }
+            p {
                 text-align: center;
                 margin-top: 40px;
             }
@@ -470,6 +475,81 @@ header {
 }
 
 
+// ! ############################### experience
+.experience_header {
+    text-align: center;
+    margin-top: 140px;
+}
+
+
+.experience {
+    margin-top: 100px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    border: 0.5px solid #ccc;
+    box-shadow: 0px 2px 8px rgb(213, 212, 212); 
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 1s ease;
+    transform: translateY(200%);
+    overflow: hidden;
+
+
+    .left {
+        width: 50%;
+    }
+
+    .right {
+        width: 50%;
+        border-left: 1px solid gray;
+        padding-left: 14px;
+
+        h6 {
+            i {
+                color: red;
+                font-size: 30px;
+            }
+        }
+        ul {
+            li {
+                list-style: none;
+                line-height: 30px;
+                i {
+                    color: $pink;
+                    padding-right: 6px;
+                    font-size: 20px; 
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 728px) {
+    .experience_header {
+        margin-top: 100px;
+    }
+    
+    .experience {
+        flex-direction: column;
+        margin-top: 50px;
+
+        h6 {
+            text-align: center;
+        }
+        .left {
+            width: 100%;
+        }
+        .right {
+            width: 100%;
+            padding-top: 20px;
+            border-left: none;
+            padding-left: 0;
+            border-top: 1px solid gray;
+        }
+    }
+}
 
 // ! ############################## internship_header
 .internship_header {
@@ -481,6 +561,22 @@ header {
 
     span {
         color: $pink;
+    }
+
+    p {
+        font-weight: 600;
+        font-size: 22px;
+        margin-top: 20px;
+    }
+}
+
+.internship_sub_header {
+    position: relative;
+    top: 70px;
+
+    i {
+        color: #ff4a57;
+        padding-right: 4px;
     }
 }
 
@@ -563,6 +659,17 @@ header {
     .internships {
         grid-template-columns: repeat(1, 1fr);
     }
+    .internship_sub_header {
+        position: relative;
+        top: 70px;
+        font-size: 17px;
+        text-align: center;
+    
+        i {
+            color: #ff4a57;
+            padding-right: 4px;
+        }
+    }
 }
 
 
@@ -576,6 +683,16 @@ header {
 
     span {
         color: $pink;
+    }
+}
+
+.slider_sub_header {
+    position: relative;
+    top: 90px;
+
+    i {
+        color: $pink;
+        padding-right: 4px;
     }
 }
 
@@ -625,6 +742,16 @@ header {
             border-radius: 2px;
             border-radius: 5px 5px 0 0;
         }
+
+        h6 {
+            position: absolute;
+            bottom: 0;
+            color: white;
+            background-color: rgba(0,0,0,0.7);
+            padding: 10px;
+            border-radius: 2px;
+            margin-left: 4px;
+        }
     }
     .slide_info {
         width: 44%;
@@ -645,6 +772,11 @@ header {
 }
 
 @media only screen and (max-width: 868px) {
+  
+.slider_sub_header {
+    font-size: 17px;
+    text-align: center;
+}
     .slider {
         height: auto;
         flex-direction: column;
@@ -854,7 +986,7 @@ footer {
         animation-delay: 2s;
 
         i {
-            color: red;
+            color: $pink;
         }
 
         a {

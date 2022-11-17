@@ -89,6 +89,19 @@ window.addEventListener('scroll', () => {
 })
 
 
+// ! ################################## experinec transition
+const experience_header = document.querySelector('.experience_header');
+const experience = document.querySelector('.experience');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY >= experience_header.offsetTop - 400) {
+        experience.style.transform = 'translateY(0)';
+    }else {
+        experience.style.transform = 'translateY(200%)';
+    }
+})
+
+
 // ! ############################## internships animation 
 
 const internships = document.querySelector('.internships');
