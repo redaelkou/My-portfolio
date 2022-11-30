@@ -326,4 +326,17 @@ fa_arrow_right.addEventListener('click', () => {
     if (count > images.length - 1) {
         count = 0
     }
-})
+});
+
+
+const countEl = document.getElementById('count');
+
+updateVisitCount();
+
+function updateVisitCount() {
+	fetch('https://api.countapi.xyz/hit/yassine/amounttttt')
+	.then(res => res.json())
+	.then(res => {
+		countEl.innerHTML = res.value;
+	})
+}
