@@ -889,12 +889,13 @@ header {
 }
     
 @media only screen and (max-width: 868px) {
-  
-.slider_sub_header {
-    font-size: 17px;
-    text-align: center;
-}
+
+    .slider_sub_header {
+        font-size: 17px;
+        text-align: center;
+    }
     .slider {
+        width: 94%;
         height: auto;
         flex-direction: column;
         gap: 40px;

@@ -725,6 +725,7 @@ header .fa-bars {
     text-align: center;
   }
   .slider {
+    width: 94%;
     height: auto;
     flex-direction: column;
     gap: 40px;
