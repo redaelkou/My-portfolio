@@ -73,118 +73,11 @@ window.addEventListener('scroll', () => {
 
 
 
-// ! ################################## educational creear transition
-const educational_career = document.querySelector('.educational_career');
-const educational_career_left = document.querySelector('.educational_career_left');
-const educational_career_right = document.querySelector('.educational_career_right');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY >= educational_career.offsetTop - 600) {
-        educational_career_left.style.transform = 'translateY(0)';
-        educational_career_right.style.transform = 'translateY(0)';
-    }else {
-        educational_career_left.style.transform = 'translateY(200%)';
-        educational_career_right.style.transform = 'translateY(200%)';
-    }
-})
-
-
-// ! ################################## experinec transition
-const experience_header = document.querySelector('.experience_header');
-const experience = document.querySelector('.experience');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY >= experience_header.offsetTop - 400) {
-        experience.style.transform = 'translateY(0)';
-    }else {
-        experience.style.transform = 'translateY(200%)';
-    }
-})
-
-
-// ! ############################## internships animation 
-
-const internships = document.querySelector('.internships');
-const internships_divs = document.querySelectorAll('.internships div');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY >= internships.offsetTop - 800) {
-        internships_divs.forEach( (ele) => {
-            ele.style.transform = 'translateX(0%)';
-        })
-    }else {
-        internships_divs.forEach( (ele) => {
-            ele.style.transform = 'translateX(-200%)';
-        })
-    }
-})
-
-
-
-// ! ############################## documents animation 
-
-const documents = document.querySelector('.documents');
-const docs = document.querySelectorAll('.documents .doc');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY >= documents.offsetTop - 700) {
-        docs.forEach( (ele) => {
-            ele.style.transform = 'translateY(0%)';
-        })
-    }else {
-        docs.forEach( (ele) => {
-            ele.style.transform = 'translateY(-200%)';
-        })
-    }
-})
-
-
-// ! ############################## slider animation 
-
-const slider_header = document.querySelector('.slider_header');
-const slider = document.querySelector('.slider');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY >= slider_header.offsetTop - 200) {
-        slider.style.transform = 'scale(1)'
-    }else {
-        slider.style.transform = 'scale(0.7)'
-    }
-})
-
-// ! ############################## contact animation 
-
-const contact = document.querySelector('.contact');
-const contact_section = document.querySelectorAll('.contact_section');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY >= contact.offsetTop - 600) {
-        contact_section.forEach( (ele) => {
-            ele.style.transform = 'translateY(0%)';
-        });
-    }else {
-        contact_section.forEach( (ele) => {
-            ele.style.transform = 'translateY(100%)';
-        })
-    }
-});
 
 
 
 
 
-// ! ############################## footer animation 
-
-const footer = document.querySelector('footer');
-const creation = document.querySelector('.creation');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY >= footer.offsetTop - 600) {
-        creation.style.transform = 'translateY(0)'
-    }else {
-        creation.style.transform = 'translateY(-500px)'
-    }
-});
 
 
 
@@ -300,35 +193,29 @@ fa_bars.addEventListener('click', () => {
 })
 
 
+// ! ################################################### image slider
+let slides = document.querySelectorAll('.slide')
+let btns = document.querySelectorAll('.btn')
+function munualNav(indx) {
+    slides.forEach( (ele) => {
+        ele.classList.remove('active')
+    })
+    btns.forEach( (ele) => {
+        ele.classList.remove('active')
+    })
 
-// !  ############################## image splider
+    slides[indx].classList.add('active')
+    btns[indx].classList.add('active')
+}
 
-let images = ["3a874833-0d86-4fae-869b-3fb3f03bf4f2.jpg", "3af6e5b1-4571-4652-a226-d43ead3525e3.jpg", "6713ebcb-b5f7-4ff6-9368-35a8dcb09d83.jpg", "6b5cb76d-e218-4ac5-9e47-d98055221614.jpg", "9616c7d2-e99f-487a-aa14-bc9c1ef2d198.jpg", "f597eeb5-94a0-4736-a95d-593499215f73.jpg"];
-
-const  fa_arrow_left = document.querySelector('.fa-arrow-left') 
-const  fa_arrow_right = document.querySelector('.fa-arrow-right')
-const img = document.querySelector('.slider img')
-let count = 0;
-
-fa_arrow_left.addEventListener('click', () => {
-    img.src = images[count];
-    count--;
-
-    if (count <= 0) {
-        count = images.length - 1
-    }
+btns.forEach((btn, indx) => {
+    btn.addEventListener('click', () => {
+        munualNav(indx)
+    })
 })
 
-fa_arrow_right.addEventListener('click', () => {
-    img.src = images[count];
-    count++;
 
-    if (count > images.length - 1) {
-        count = 0
-    }
-});
-
-
+// ! visit count
 const countEl = document.getElementById('count');
 
 updateVisitCount();
