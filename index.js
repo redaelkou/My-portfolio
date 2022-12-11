@@ -215,15 +215,3 @@ btns.forEach((btn, indx) => {
 })
 
 
-// ! visit count
-const countEl = document.getElementById('count');
-
-updateVisitCount();
-
-function updateVisitCount() {
-	fetch('https://api.countapi.xyz/hit/yassine/amounttttt')
-	.then(res => res.json())
-	.then(res => {
-		countEl.innerHTML = res.value;
-	})
-}

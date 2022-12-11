@@ -1019,7 +1019,6 @@ header {
             font-size: 30px;
             position: absolute;
             left: 50%;
-            transform: translateX(-50%);
             color: $pink;
         }
 
@@ -1104,7 +1103,6 @@ footer {
     h5 {
         color: white;
         transition: all 1s ease;
-        transform: translateY(-500px);
         animation-delay: 2s;
 
         i {

@@ -828,7 +828,6 @@ header .fa-bars {
   font-size: 30px;
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
   color: #ff4a57;
 }
 .contact .contact_section p {
@@ -898,7 +897,6 @@ footer h1 span {
 footer h5 {
   color: white;
   transition: all 1s ease;
-  transform: translateY(-500px);
   -webkit-animation-delay: 2s;
           animation-delay: 2s;
 }
